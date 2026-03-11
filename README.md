@@ -86,7 +86,7 @@ The full Manus Skill integrates directly into Manus and runs automatically — n
 
 <p align="center">
   <a href="https://creditopt.ai">
-    <strong>🔥 Get the Manus Skill — $9 Launch Special (was Pay What You Want) →</strong>
+    <strong>🔥 LAUNCH WEEK: Pay What You Want ($0+) — Get it free or name your price →</strong>
   </a>
 </p>
 
@@ -153,9 +153,9 @@ All 53 test scenarios pass with zero quality degradation:
 |--------|-------|-------------|
 | **MCP Server (this repo)** | **Free** | MCP tools for Claude, Cursor, Copilot, etc. |
 | **Apify Cloud MCP** | **Free** | Zero-install cloud MCP via [Apify Store](https://apify.com/skillforge-ai/credit-optimizer-v5) |
-| **Manus Skill** | **~~Pay What You Want~~ $9** | Native Manus integration + auto-activation + priority updates |
+| **Manus Skill** | **Pay What You Want ($0+)** | Native Manus integration + auto-activation + priority updates |
 
-### Why pay $9 when the MCP server is free?
+### Why pay when the MCP server is free?
 
 The **Manus Skill** gives you:
 - **Auto-activation** — runs on every task without you remembering to use it
@@ -168,7 +168,7 @@ The **Manus Skill** gives you:
 
 <p align="center">
   <a href="https://creditopt.ai">
-    <strong>🔥 $9 Launch Special — Save 30-75% on Every Manus Task →</strong>
+    <strong>🔥 Pay What You Want ($0+) — Save 30-75% on Every Manus Task →</strong>
   </a>
   <br>
   <sub>One-time payment. No subscription. 30-day money-back guarantee.</sub>
