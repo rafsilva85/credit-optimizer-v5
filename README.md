@@ -103,12 +103,12 @@ Same quality output, fewer credits
 
 | Metric | Value |
 |--------|-------|
-| Average credit savings | **47%** |
-| Quality score (before) | 9.2/10 |
-| Quality score (after) | 9.2/10 |
+| Credit savings range | **30–75%** |
+| Average savings (across all task types) | **~55%** |
 | Quality loss | **0%** |
-| Tasks audited | 200+ |
-| Test scenarios | 53 (all passing) |
+| Real tasks analyzed | 200+ |
+| Adversarial test scenarios | 53 (all passing) |
+| Vulnerabilities found & fixed | 12 |
 
 ---
 
