@@ -1,6 +1,6 @@
 # Credit Optimizer v5 for Manus AI
 
-> **Save 30-75% on Manus AI credits with zero quality loss.** Audited across 53 scenarios, 200+ tasks verified. Works as MCP server (free) or native Manus Skill.
+> **Save 30-75% on Manus AI credits with zero quality loss.** Audited across 53 scenarios, 200+ tasks verified. Works as MCP server (free) or native Manus Skill ($9).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
@@ -143,7 +143,9 @@ Add to your MCP config (`claude_desktop_config.json` or equivalent):
 
 The Manus Skill runs automatically on every task — no manual prompting needed.
 
-**[Get it free (Pay What You Want $0+) →](https://creditopt.ai)**
+**[Get the Manus Skill — $9 →](https://creditopt.ai)**
+
+One-time payment. Lifetime updates. 30-day money-back guarantee.
 
 ---
 
@@ -181,7 +183,7 @@ The **Manus Skill** gives you:
 - **Auto-activation** — runs on every task without you remembering to use it
 - **Native integration** — works inside Manus, not as an external tool
 - **Priority updates** — get new optimization patterns first
-- **One-time payment** — no subscription, yours forever
+- **One-time $9 payment** — no subscription, yours forever
 
 > The MCP server saves you credits when you remember to use it.
 > The Manus Skill saves you credits on **every single task** automatically.
