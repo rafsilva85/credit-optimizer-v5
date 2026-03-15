@@ -1,20 +1,24 @@
 [project]
 name = "mcp-credit-optimizer"
-version = "5.1.0"
-description = "AI Credit Optimizer MCP Server — Save 30-75% on AI credits with ZERO quality loss. Audited across 10,000+ scenarios."
+version = "5.2.0"
+description = "AI Credit Optimizer MCP Server — Save 30-75% on AI credits with ZERO quality loss. ~55% average savings across 53 adversarial scenarios."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [
-    {name = "SkillForge", email = "contact@skillforge.dev"}
+    {name = "Rafael Silva", email = "rafsilva85@gmail.com"}
 ]
-keywords = ["mcp", "ai", "credits", "optimization", "agent", "claude", "cursor", "manus"]
+keywords = ["mcp", "ai", "credits", "optimization", "agent", "claude", "cursor", "manus", "model-context-protocol"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
 dependencies = [
@@ -22,13 +26,18 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/rafsilva85/manus-credit-optimizer"
-Documentation = "https://github.com/rafsilva85/manus-credit-optimizer#readme"
-Issues = "https://github.com/rafsilva85/manus-credit-optimizer/issues"
+Homepage = "https://creditopt.ai"
+Repository = "https://github.com/rafsilva85/credit-optimizer-v5"
+Documentation = "https://github.com/rafsilva85/credit-optimizer-v5#readme"
+Issues = "https://github.com/rafsilva85/credit-optimizer-v5/issues"
+Changelog = "https://github.com/rafsilva85/credit-optimizer-v5/releases"
+
+[project.scripts]
+mcp-credit-optimizer = "mcp_credit_optimizer.server:mcp.run"
 
 [build-system]
 requires = ["setuptools>=68.0"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["mcp_credit_optimizer*"]

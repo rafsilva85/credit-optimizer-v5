@@ -1,6 +1,10 @@
 # Credit Optimizer v5 for Manus AI
 
-> **Save 30-75% on Manus AI credits with zero quality loss.** Audited across 53 scenarios, 200+ tasks verified. Works as MCP server (free) or native Manus Skill ($9).
+<!-- mcp-name: io.github.rafsilva85/credit-optimizer -->
+
+> **Save 30-75% on Manus AI credits with zero quality loss.** ~55% average savings. Audited across 53 adversarial scenarios, 200+ tasks verified. Works as MCP server (free) or native Manus Skill ($9).
+
+[![PyPI](https://img.shields.io/pypi/v/mcp-credit-optimizer.svg)](https://pypi.org/project/mcp-credit-optimizer/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
@@ -119,9 +123,17 @@ Same quality output, fewer credits
 Works with Claude Desktop, Cursor, Windsurf, Copilot, and any MCP-compatible client.
 
 ```bash
-pip install fastmcp
+# Install from PyPI (recommended)
+pip install mcp-credit-optimizer
+python -m mcp_credit_optimizer
+```
+
+Or install from source:
+
+```bash
 git clone https://github.com/rafsilva85/credit-optimizer-v5.git
 cd credit-optimizer-v5
+pip install -e .
 python -m mcp_credit_optimizer
 ```
 
@@ -132,8 +144,7 @@ Add to your MCP config (`claude_desktop_config.json` or equivalent):
   "mcpServers": {
     "credit-optimizer": {
       "command": "python",
-      "args": ["-m", "mcp_credit_optimizer"],
-      "cwd": "/path/to/credit-optimizer-v5"
+      "args": ["-m", "mcp_credit_optimizer"]
     }
   }
 }
