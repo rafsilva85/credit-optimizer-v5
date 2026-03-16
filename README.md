@@ -5,11 +5,13 @@
 > **Save 30-75% on Manus AI credits with zero quality loss.** ~55% average savings. Audited across 53 adversarial scenarios, 200+ tasks verified. Works as MCP server (free) or native Manus Skill ($9).
 
 [![PyPI](https://img.shields.io/pypi/v/mcp-credit-optimizer.svg)](https://pypi.org/project/mcp-credit-optimizer/)
-
+[![PyPI Downloads](https://img.shields.io/pypi/dm/mcp-credit-optimizer.svg)](https://pypi.org/project/mcp-credit-optimizer/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-purple.svg)](https://modelcontextprotocol.io)
 [![Stars](https://img.shields.io/github/stars/rafsilva85/credit-optimizer-v5?style=social)](https://github.com/rafsilva85/credit-optimizer-v5)
+
+**Available on:** [PyPI](https://pypi.org/project/mcp-credit-optimizer/) · [MCP Registry](https://registry.modelcontextprotocol.io) · [Smithery](https://smithery.ai/server/rafsilva85/credit-optimizer) · [GitHub](https://github.com/rafsilva85/credit-optimizer-v5) · [Landing Page](https://creditopt.ai)
 
 ---
 

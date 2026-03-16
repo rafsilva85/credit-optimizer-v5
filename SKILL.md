@@ -1,7 +1,7 @@
 ---
 name: credit-optimizer
 description: Automatically optimize AI agent credit usage by routing tasks to the most cost-efficient execution path. Use when you want to reduce AI API costs by 30-75% without quality loss, classify task complexity before execution, route simple tasks to free or low-cost models, split complex tasks into optimized sub-tasks, or detect vague prompts before wasting credits.
-version: 5.0.0
+version: 5.2.0
 author: rafsilva85
 license: MIT
 compatibility: claude-code, cursor, codex, manus, opencode
