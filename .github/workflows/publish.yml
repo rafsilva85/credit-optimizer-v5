@@ -1,36 +1,113 @@
-name: Publish to PyPI
+name: Publish Credit Optimizer
 
 on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 5.2.1)'
+        required: true
 
 permissions:
+  contents: read
   id-token: write
 
 jobs:
-  publish:
-    name: Build and publish to PyPI
+  publish-pypi:
+    name: Build & Publish to PyPI
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/mcp-credit-optimizer
-    permissions:
-      id-token: write
-
+    environment: pypi
     steps:
       - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
-      - name: Install build dependencies
-        run: pip install build
+      - name: Install build tools
+        run: pip install build twine
 
       - name: Build package
         run: python -m build
 
+      - name: Check package
+        run: twine check dist/*
+
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: twine upload dist/*
+
+  update-mcp-registry:
+    name: Update MCP Registry
+    needs: publish-pypi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download mcp-publisher
+        run: |
+          curl -sL "https://github.com/modelcontextprotocol/registry/releases/download/v1.5.0/mcp-publisher-linux-amd64" -o mcp-publisher
+          chmod +x mcp-publisher
+
+      - name: Login to MCP Registry
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./mcp-publisher login github -token "$GH_TOKEN"
+
+      - name: Publish to MCP Registry
+        run: ./mcp-publisher publish
+
+  update-smithery:
+    name: Update Smithery
+    needs: publish-pypi
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Smithery metadata
+        env:
+          SMITHERY_API_KEY: ${{ secrets.SMITHERY_API_KEY }}
+        run: |
+          VERSION="${{ github.event.release.tag_name || github.event.inputs.version }}"
+          curl -s -X PUT \
+            "https://registry.smithery.ai/servers/rafsilva85%2Fcredit-optimizer" \
+            -H "Authorization: Bearer $SMITHERY_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"displayName\": \"Credit Optimizer v5 for Manus AI\",
+              \"description\": \"MCP server that saves 30-75% on Manus AI credits. Intelligent model routing, smart testing, zero quality loss. Audited across 53 scenarios.\",
+              \"sourceUrl\": \"https://github.com/rafsilva85/credit-optimizer-v5\",
+              \"installHint\": \"pip install mcp-credit-optimizer==${VERSION#v}\"
+            }"
+
+  notify:
+    name: Send Notification
+    needs: [publish-pypi, update-mcp-registry, update-smithery]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Send WhatsApp notification
+        env:
+          EVOLUTION_API_KEY: ${{ secrets.EVOLUTION_API_KEY }}
+          WHATSAPP_NUMBER: ${{ secrets.WHATSAPP_NUMBER }}
+        run: |
+          VERSION="${{ github.event.release.tag_name || github.event.inputs.version }}"
+          PYPI_STATUS="${{ needs.publish-pypi.result }}"
+          MCP_STATUS="${{ needs.update-mcp-registry.result }}"
+          SMITHERY_STATUS="${{ needs.update-smithery.result }}"
+          
+          MESSAGE="📦 *Credit Optimizer ${VERSION} Published*
+
+          PyPI: ${PYPI_STATUS}
+          MCP Registry: ${MCP_STATUS}
+          Smithery: ${SMITHERY_STATUS}"
+          
+          if [ -n "$EVOLUTION_API_KEY" ] && [ -n "$WHATSAPP_NUMBER" ]; then
+            curl -s -X POST \
+              "https://evolution-api-production-3335.up.railway.app/message/sendText/boleto_bot" \
+              -H "Content-Type: application/json" \
+              -H "apikey: $EVOLUTION_API_KEY" \
+              -d "{\"number\": \"$WHATSAPP_NUMBER\", \"text\": \"$MESSAGE\"}"
+          fi
