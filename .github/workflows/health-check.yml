@@ -1,0 +1,123 @@
+name: Health Check - Credit Optimizer Ecosystem
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Daily at 9 AM UTC (6 AM BRT)
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Check All Platforms
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PyPI
+        id: pypi
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://pypi.org/pypi/mcp-credit-optimizer/json")
+          VERSION=$(curl -s "https://pypi.org/pypi/mcp-credit-optimizer/json" | python3 -c "import sys,json; print(json.load(sys.stdin)['info']['version'])" 2>/dev/null || echo "UNKNOWN")
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "PyPI: HTTP $STATUS, Version: $VERSION"
+
+      - name: Check MCP Registry
+        id: mcp
+        run: |
+          RESPONSE=$(curl -s "https://registry.modelcontextprotocol.io/v0.1/servers?search=credit-optimizer")
+          COUNT=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(len(d.get('servers',[])))" 2>/dev/null || echo "0")
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          echo "MCP Registry: $COUNT servers found"
+
+      - name: Check Smithery
+        id: smithery
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://registry.smithery.ai/servers/rafsilva85%2Fcredit-optimizer")
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "Smithery: HTTP $STATUS"
+
+      - name: Check Landing Page
+        id: landing
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -L "https://creditopt.ai")
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "Landing Page: HTTP $STATUS"
+
+      - name: Check Gumroad
+        id: gumroad
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -L "https://rafaamaral.gumroad.com/l/credit-optimizer-v5")
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "Gumroad: HTTP $STATUS"
+
+      - name: Check GitHub Repo
+        id: github
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/rafsilva85/credit-optimizer-v5")
+          STARS=$(curl -s "https://api.github.com/repos/rafsilva85/credit-optimizer-v5" | python3 -c "import sys,json; print(json.load(sys.stdin).get('stargazers_count',0))" 2>/dev/null || echo "0")
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "stars=$STARS" >> $GITHUB_OUTPUT
+          echo "GitHub: HTTP $STATUS, Stars: $STARS"
+
+      - name: Generate Report
+        id: report
+        run: |
+          PYPI="${{ steps.pypi.outputs.status }}"
+          MCP="${{ steps.mcp.outputs.count }}"
+          SMITHERY="${{ steps.smithery.outputs.status }}"
+          LANDING="${{ steps.landing.outputs.status }}"
+          GUMROAD="${{ steps.gumroad.outputs.status }}"
+          GITHUB="${{ steps.github.outputs.status }}"
+          VERSION="${{ steps.pypi.outputs.version }}"
+          STARS="${{ steps.github.outputs.stars }}"
+          
+          # Determine overall health
+          HEALTHY=true
+          ISSUES=""
+          
+          [ "$PYPI" != "200" ] && HEALTHY=false && ISSUES="${ISSUES}PyPI DOWN (${PYPI}). "
+          [ "$MCP" = "0" ] && HEALTHY=false && ISSUES="${ISSUES}MCP Registry empty. "
+          [ "$SMITHERY" != "200" ] && ISSUES="${ISSUES}Smithery issue (${SMITHERY}). "
+          [ "$LANDING" != "200" ] && HEALTHY=false && ISSUES="${ISSUES}Landing page DOWN (${LANDING}). "
+          [ "$GUMROAD" != "200" ] && HEALTHY=false && ISSUES="${ISSUES}Gumroad DOWN (${GUMROAD}). "
+          [ "$GITHUB" != "200" ] && HEALTHY=false && ISSUES="${ISSUES}GitHub DOWN (${GITHUB}). "
+          
+          if [ "$HEALTHY" = "true" ]; then
+            REPORT="✅ *Credit Optimizer Health Check*
+
+All systems operational.
+Version: ${VERSION}
+GitHub Stars: ${STARS}
+            
+PyPI: ✅ | MCP: ✅ | Smithery: ✅
+Landing: ✅ | Gumroad: ✅ | GitHub: ✅"
+          else
+            REPORT="🚨 *Credit Optimizer Health Check - ISSUES DETECTED*
+
+${ISSUES}
+
+PyPI: $([ "$PYPI" = "200" ] && echo "✅" || echo "❌ $PYPI")
+MCP: $([ "$MCP" != "0" ] && echo "✅" || echo "❌")
+Smithery: $([ "$SMITHERY" = "200" ] && echo "✅" || echo "⚠️ $SMITHERY")
+Landing: $([ "$LANDING" = "200" ] && echo "✅" || echo "❌ $LANDING")
+Gumroad: $([ "$GUMROAD" = "200" ] && echo "✅" || echo "❌ $GUMROAD")
+GitHub: $([ "$GITHUB" = "200" ] && echo "✅" || echo "❌ $GITHUB")"
+          fi
+          
+          echo "healthy=$HEALTHY" >> $GITHUB_OUTPUT
+          echo "report<<EOF" >> $GITHUB_OUTPUT
+          echo "$REPORT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Send WhatsApp Alert (only on issues)
+        if: steps.report.outputs.healthy == 'false'
+        env:
+          EVOLUTION_API_KEY: ${{ secrets.EVOLUTION_API_KEY }}
+          WHATSAPP_NUMBER: ${{ secrets.WHATSAPP_NUMBER }}
+        run: |
+          REPORT="${{ steps.report.outputs.report }}"
+          if [ -n "$EVOLUTION_API_KEY" ] && [ -n "$WHATSAPP_NUMBER" ]; then
+            curl -s -X POST \
+              "https://evolution-api-production-3335.up.railway.app/message/sendText/boleto_bot" \
+              -H "Content-Type: application/json" \
+              -H "apikey: $EVOLUTION_API_KEY" \
+              -d "{\"number\": \"$WHATSAPP_NUMBER\", \"text\": $(echo "$REPORT" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))')}"
+          fi
