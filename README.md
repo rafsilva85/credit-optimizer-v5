@@ -13,6 +13,8 @@
 
 **Available on:** [PyPI](https://pypi.org/project/mcp-credit-optimizer/) · [MCP Registry](https://registry.modelcontextprotocol.io) · [Smithery](https://smithery.ai/server/rafsilva85/credit-optimizer) · [GitHub](https://github.com/rafsilva85/credit-optimizer-v5) · [Landing Page](https://creditopt.ai)
 
+[![Credit Optimizer v5 MCP server](https://glama.ai/mcp/servers/rafsilva85/credit-optimizer-v5/badges/card.svg)](https://glama.ai/mcp/servers/rafsilva85/credit-optimizer-v5)
+
 ---
 
 ## The Problem
