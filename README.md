@@ -1,6 +1,6 @@
 # Credit Optimizer v5 for Manus AI
 
-<!-- mcp-name: io.github.rafsilva85/credit-optimizer -->
+<!-- mcp-name: io.github.rafsilva85/credit-optimizer-v5 -->
 
 > **Save 30-75% on Manus AI credits with zero quality loss.** ~55% average savings. Audited across 53 adversarial scenarios, 200+ tasks verified. Works as MCP server (free) or native Manus Skill ($9).
 
