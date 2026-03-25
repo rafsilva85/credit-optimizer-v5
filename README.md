@@ -1,3 +1,5 @@
+[![Available on SkillFlow](https://raw.githubusercontent.com/rafsilva85/awesome-ai-skills/main/badges/skillflow-available.svg)](https://skillflow.builders)
+
 # Credit Optimizer v5 for Manus AI
 
 <!-- mcp-name: io.github.rafsilva85/credit-optimizer-v5 -->
