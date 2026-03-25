@@ -1,19 +1,16 @@
 [![Available on SkillFlow](https://raw.githubusercontent.com/rafsilva85/awesome-ai-skills/main/badges/skillflow-available.svg)](https://skillflow.builders)
-
 # Credit Optimizer v5 for Manus AI
-
 <!-- mcp-name: io.github.rafsilva85/credit-optimizer-v5 -->
-
 > **Save 30-75% on Manus AI credits with zero quality loss.** ~55% average savings. Audited across 53 adversarial scenarios, 200+ tasks verified. Works as MCP server (free) or native Manus Skill ($9).
 
-[![PyPI](https://img.shields.io/pypi/v/mcp-credit-optimizer.svg)](https://github.com/rafsilva85/credit-optimizer-v5)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/mcp-credit-optimizer.svg)](https://github.com/rafsilva85/credit-optimizer-v5)
+[![PyPI](https://img.shields.io/pypi/v/manus-credit-optimizer.svg)](https://pypi.org/project/manus-credit-optimizer/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/manus-credit-optimizer.svg)](https://pypi.org/project/manus-credit-optimizer/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 [![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-purple.svg)](https://modelcontextprotocol.io)
 [![Stars](https://img.shields.io/github/stars/rafsilva85/credit-optimizer-v5?style=social)](https://github.com/rafsilva85/credit-optimizer-v5)
 
-**Available on:** [PyPI](https://github.com/rafsilva85/credit-optimizer-v5) · [MCP Registry](https://registry.modelcontextprotocol.io) · [Smithery](https://smithery.ai/server/rafsilva85/credit-optimizer) · [GitHub](https://github.com/rafsilva85/credit-optimizer-v5) · [Landing Page](https://creditopt.ai)
+**Available on:** [PyPI](https://pypi.org/project/manus-credit-optimizer/) · [Smithery](https://smithery.ai/server/rafsilva85/credit-optimizer) · [PulseMCP](https://pulsemcp.com) · [GitHub](https://github.com/rafsilva85/credit-optimizer-v5) · [Landing Page](https://creditopt.ai)
 
 ---
 
@@ -34,76 +31,38 @@ Manus AI charges credits per task. Most users waste 30-75% of their credits beca
 
 ```
 Your Prompt
-    │
-    ▼
-┌──────────────────────────────────────────┐
-│         Credit Optimizer v5              │
-│                                          │
-│  1. Intent Classification (12 categories)│
-│  2. Complexity Scoring                   │
-│  3. Model Routing (Standard vs Max)      │
-│  4. Prompt Compression                   │
-│  5. Batch Detection                      │
-│  6. Context Hygiene                      │
-│  7. Output Format Optimization           │
-│                                          │
-│  Result: Optimized strategy + savings %  │
-└──────────────────────────────────────────┘
-    │
-    ▼
+    |
+    v
++------------------------------------------+
+|         Credit Optimizer v5              |
+|                                          |
+|  1. Intent Classification (12 categories)|
+|  2. Complexity Scoring                   |
+|  3. Model Routing (Standard vs Max)      |
+|  4. Prompt Compression                   |
+|  5. Batch Detection                      |
+|  6. Context Hygiene                      |
+|  7. Output Format Optimization           |
+|                                          |
+|  Result: Optimized strategy + savings %  |
++------------------------------------------+
+    |
+    v
 Same quality output, fewer credits
 ```
 
 ---
 
-## Demo
+## Quick ROI Calculator
 
-```
-> analyze_prompt("Build me a React dashboard with charts, auth, and database backend")
+| Your Monthly Spend | Conservative (30%) | Balanced (53%) | Aggressive (75%) |
+|--------------------|--------------------|----------------|-------------------|
+| $50/month | Save $15 | Save $26.50 | Save $37.50 |
+| $100/month | Save $30 | Save $53 | Save $75 |
+| $200/month | Save $60 | Save $106 | Save $150 |
+| $500/month | Save $150 | Save $265 | Save $375 |
 
-╔══════════════════════════════════════════════════════════════╗
-║  CREDIT OPTIMIZER v5 — Analysis Report                      ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  Intent:      code_generation (complex, multi-component)     ║
-║  Model:       Max mode ✓ (correct for this complexity)       ║
-║  Savings:     35-45% estimated                               ║
-║  Quality:     0% loss                                        ║
-║                                                              ║
-║  Strategy: Split into 3 sequential tasks                     ║
-║  ┌──────────────────────────────────────────────────────┐    ║
-║  │ Task 1: Database schema + API routes (Standard)      │    ║
-║  │ Task 2: Authentication flow (Standard)               │    ║
-║  │ Task 3: React dashboard + charts (Max)               │    ║
-║  └──────────────────────────────────────────────────────┘    ║
-║                                                              ║
-║  Optimizations applied:                                      ║
-║  ✓ Model routing: Tasks 1-2 downgraded to Standard           ║
-║  ✓ Batch detection: 3 focused tasks vs 1 monolithic          ║
-║  ✓ Context hygiene: Removed redundant specifications         ║
-║  ✓ Output format: Structured code blocks per component       ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-```
-
-```
-> analyze_prompt("Translate this paragraph to Spanish")
-
-╔══════════════════════════════════════════════════════════════╗
-║  CREDIT OPTIMIZER v5 — Analysis Report                      ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  Intent:      translation (simple)                           ║
-║  Model:       Standard mode ✓ (Max unnecessary)              ║
-║  Savings:     60-70% estimated                               ║
-║  Quality:     0% loss                                        ║
-║                                                              ║
-║  Recommendation: Use Standard mode                           ║
-║  Translation tasks produce identical quality in Standard.    ║
-║  No splitting needed — single atomic task.                   ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-```
+> **The Pro version costs $9 one-time.** If you spend $50+/month on Manus, it pays for itself in the first week.
 
 ---
 
@@ -111,24 +70,21 @@ Same quality output, fewer credits
 
 | Metric | Value |
 |--------|-------|
-| Credit savings range | **30–75%** |
-| Average savings (across all task types) | **~55%** |
+| Credit savings range | **30-75%** |
+| Average savings | **~55%** |
 | Quality loss | **0%** |
 | Real tasks analyzed | 200+ |
 | Adversarial test scenarios | 53 (all passing) |
-| Vulnerabilities found & fixed | 12 |
+| Vulnerabilities found and fixed | 12 |
 
 ---
 
-## Quick Start
+## Installation
 
-### Option 1: MCP Server (Free)
-
-Works with Claude Desktop, Cursor, Windsurf, Copilot, and any MCP-compatible client.
+### Option 1: MCP Server (Free, Open Source)
 
 ```bash
-# Install from PyPI (recommended)
-pip install mcp-credit-optimizer
+pip install manus-credit-optimizer
 python -m mcp_credit_optimizer
 ```
 
@@ -141,7 +97,7 @@ pip install -e .
 python -m mcp_credit_optimizer
 ```
 
-Add to your MCP config (`claude_desktop_config.json` or equivalent):
+Add to your MCP config:
 
 ```json
 {
@@ -156,9 +112,9 @@ Add to your MCP config (`claude_desktop_config.json` or equivalent):
 
 ### Option 2: Manus Skill (Native Integration)
 
-The Manus Skill runs automatically on every task — no manual prompting needed.
+The Manus Skill runs automatically on every task - no manual prompting needed.
 
-**[Get the Manus Skill — $9 →](https://creditopt.ai)**
+**[Get the Manus Skill - $9](https://creditopt.ai)**
 
 One-time payment. Lifetime updates. 30-day money-back guarantee.
 
@@ -184,10 +140,21 @@ All 53 test scenarios pass with zero quality degradation:
 | Creative writing (blog, marketing) | 8 | 0% |
 | Data analysis (CSV, JSON, API) | 7 | 0% |
 | Research (multi-source synthesis) | 6 | 0% |
-| Translation & localization | 5 | 0% |
-| Bug fixing & debugging | 5 | 0% |
+| Translation and localization | 5 | 0% |
+| Bug fixing and debugging | 5 | 0% |
 | Documentation generation | 5 | 0% |
 | Mixed-intent tasks | 5 | 0% |
+
+---
+
+## Traction
+
+| Metric | Value |
+|--------|-------|
+| Gumroad Sales | 33+ |
+| PyPI Package | [manus-credit-optimizer](https://pypi.org/project/manus-credit-optimizer/) |
+| Listed On | Smithery, PulseMCP, mcp.so, mcpmarket, Cursor Directory |
+| Dev.to Articles | [Read our case studies](https://dev.to/rafsilva85) |
 
 ---
 
@@ -195,35 +162,31 @@ All 53 test scenarios pass with zero quality degradation:
 
 The **Manus Skill** gives you:
 
-- **Auto-activation** — runs on every task without you remembering to use it
-- **Native integration** — works inside Manus, not as an external tool
-- **Priority updates** — get new optimization patterns first
-- **One-time $9 payment** — no subscription, yours forever
+- **Auto-activation** - runs on every task without you remembering to use it
+- **Native integration** - works inside Manus, not as an external tool
+- **Priority updates** - get new optimization patterns first
+- **One-time $9 payment** - no subscription, yours forever
 
-> The MCP server saves you credits when you remember to use it.
-> The Manus Skill saves you credits on **every single task** automatically.
+> The MCP server saves you credits when you remember to use it. The Manus Skill saves you credits on **every single task** automatically.
 
 ---
 
 ## Community Feedback
 
-> *"Excellent advice"* — [u/Business_Cheetah_689](https://reddit.com/r/ManusAI) on the optimization strategies
+> *"Excellent advice"* - u/Business_Cheetah_689 on the optimization strategies
 
-> *"This is exactly what I needed. Was burning through credits way too fast."* — Reddit user
+> *"This is exactly what I needed. Was burning through credits way too fast."* - Reddit user
 
 ---
 
 ## Contributing
 
-Issues and PRs welcome! If you find a scenario where the optimizer reduces quality, please [open an issue](https://github.com/rafsilva85/credit-optimizer-v5/issues) with the prompt and expected output.
+Issues and PRs welcome! If you find a scenario where the optimizer reduces quality, please [open an issue](https://github.com/rafsilva85/credit-optimizer-v5/issues).
 
 ## License
 
-MIT License — use it freely in personal and commercial projects.
+MIT License
 
 ---
 
-<p align="center">
-  <strong>Built by <a href="https://github.com/rafsilva85">Rafael Silva</a></strong><br>
-  <a href="https://creditopt.ai">creditopt.ai</a> · <a href="https://rafaamaral.gumroad.com/l/credit-optimizer-v5">Gumroad</a> · <a href="https://github.com/rafsilva85/credit-optimizer-v5">GitHub</a>
-</p>
+Built by [Rafael Silva](https://github.com/rafsilva85) | [creditopt.ai](https://creditopt.ai) | [Gumroad](https://rafaamaral.gumroad.com/l/credit-optimizer-v5) | [GitHub](https://github.com/rafsilva85/credit-optimizer-v5)
