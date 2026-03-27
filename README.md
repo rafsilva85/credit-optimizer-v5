@@ -1,4 +1,10 @@
 <p align="center">
+
+[![PyPI Version](https://img.shields.io/pypi/v/manus-credit-optimizer?color=green&label=PyPI)](https://pypi.org/project/manus-credit-optimizer/)
+[![Downloads](https://img.shields.io/pypi/dm/manus-credit-optimizer?color=blue&label=Downloads)](https://pypi.org/project/manus-credit-optimizer/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Manus AI](https://img.shields.io/badge/Manus_AI-Power_Stack-purple)](https://creditopt.ai)
+
   <img src="https://img.shields.io/pypi/v/mcp-credit-optimizer?color=green&label=PyPI" alt="PyPI">
   <img src="https://img.shields.io/pypi/dm/mcp-credit-optimizer?color=blue&label=Downloads" alt="Downloads">
   <img src="https://img.shields.io/github/stars/rafsilva85/credit-optimizer-v5?style=social" alt="Stars">
