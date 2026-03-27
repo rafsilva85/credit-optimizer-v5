@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.rafsilva85/credit-optimizer",
-  "title": "Manus Credit Optimizer — Save 47% Automatically",
-  "description": "Save 47% on Manus AI credits with zero downsides. Intelligent model routing, chat mode detection, context hygiene, and smart testing. Pays for itself in ~27 prompts. Quality Veto Rule: never reduces output quality. Audited across 53 scenarios with 0% quality loss. Part of the Manus Power Stack ($12) which also includes Fast Navigation (115x speed boost).",
+  "title": "Manus Credit Optimizer \u2014 Save 47% Automatically",
+  "description": "Save 47% on Manus AI credits automatically. Zero downsides \u2014 Quality Veto Rule ensures output quality is never compromised. Pays for itself in ~27 prompts. Intelligent model routing (Chat/Standard/Max), smart testing, context compression, and chat mode detection. One-time $12 purchase, lifetime updates.",
   "repository": {
     "url": "https://github.com/rafsilva85/credit-optimizer-v5",
     "source": "github"
