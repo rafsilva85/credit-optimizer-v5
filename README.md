@@ -4,13 +4,11 @@
 [![Downloads](https://img.shields.io/pypi/dm/manus-credit-optimizer?color=blue&label=Downloads)](https://pypi.org/project/manus-credit-optimizer/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Manus AI](https://img.shields.io/badge/Manus_AI-Power_Stack-purple)](https://creditopt.ai)
+[![Stars](https://img.shields.io/github/stars/rafsilva85/credit-optimizer-v5?style=social)](https://github.com/rafsilva85/credit-optimizer-v5)
+[![Quality Loss](https://img.shields.io/badge/quality%20loss-0%25-brightgreen)](https://creditopt.ai)
+[![Scenarios](https://img.shields.io/badge/scenarios%20audited-53-blue)](https://creditopt.ai)
+[![Sales](https://img.shields.io/badge/sales-34%2B-success)](https://rafaamaral.gumroad.com/l/credit-optimizer-v5)
 
-  <img src="https://img.shields.io/pypi/v/mcp-credit-optimizer?color=green&label=PyPI" alt="PyPI">
-  <img src="https://img.shields.io/pypi/dm/mcp-credit-optimizer?color=blue&label=Downloads" alt="Downloads">
-  <img src="https://img.shields.io/github/stars/rafsilva85/credit-optimizer-v5?style=social" alt="Stars">
-  <img src="https://img.shields.io/badge/quality%20loss-0%25-brightgreen" alt="Zero Quality Loss">
-  <img src="https://img.shields.io/badge/scenarios%20audited-53-blue" alt="53 Scenarios">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
 </p>
 
 # Manus Power Stack
@@ -20,8 +18,12 @@
 > **Zero downsides. 47% average savings. Pays for itself in ~27 prompts.**
 > Audited across 53 adversarial scenarios. Quality Veto Rule: if it can't save without loss, it doesn't touch your task.
 
-**Get it:** [Landing Page](https://creditopt.ai) · [Gumroad ($12)](https://rafaamaral.gumroad.com/l/manus-power-bundle) · [SkillFlow](https://skillflow.builders/skill/manus-power-bundle-mn7p4h88)
-**Free MCP Server:** [PyPI](https://pypi.org/project/mcp-credit-optimizer/) · [Smithery](https://smithery.ai/server/@rafsilva85/mcp-credit-optimizer) · [Cursor Directory](https://cursor.directory/)
+**Get it:** [Landing Page](https://creditopt.ai) · [Gumroad ($9)](https://rafaamaral.gumroad.com/l/credit-optimizer-v5) · [Power Bundle ($12)](https://rafaamaral.gumroad.com/l/manus-power-bundle) · [SkillFlow](https://skillflow.builders/skill/manus-power-bundle-mn7p4h88)
+**Free MCP Server:** [PyPI](https://pypi.org/project/mcp-credit-optimizer/) · [Smithery](https://smithery.ai/server/@rafsilva85/mcp-credit-optimizer)
+
+### As Seen On
+
+[Dev.to](https://dev.to/rafsilva85) · [PulseMCP](https://www.pulsemcp.com/servers?q=credit+optimizer) · [Smithery](https://smithery.ai/server/@rafsilva85/mcp-credit-optimizer) · [MCPServers.org](https://mcpservers.org) · [Agensi.io](https://agensi.io) · [Indie Hackers](https://www.indiehackers.com/post/i-saved-47-on-manus-ai-credits-by-building-a-routing-optimizer-heres-what-i-learned-34326b7c25) · [Awesome Manus AI](https://github.com/rafsilva85/awesome-manus-ai)
 
 ---
 
@@ -88,12 +90,12 @@ Credit Optimizer decides **what** to optimize. Fast Navigation decides **how fas
 
 ## The Math: Payback in ~27 Prompts
 
-The Power Stack costs $12 one-time. Here's how fast it pays for itself:
+The Power Stack costs $9 one-time (or $12 for the bundle with Fast Navigation). Here's how fast it pays for itself:
 
 | Plan | Monthly Cost | 47% Wasted | Daily Waste | Payback |
 |------|-------------|------------|-------------|---------|
-| Plus ($39/mo) | 6,500 cr/day | ~3,055 cr/day | ~$0.44/day | **~27 prompts** |
-| Max ($99/mo) | 16,250 cr/day | ~7,637 cr/day | ~$0.92/day | **~13 prompts** |
+| Plus ($39/mo) | 6,500 cr/day | ~3,055 cr/day | ~$0.44/day | **~20 prompts** |
+| Max ($99/mo) | 16,250 cr/day | ~7,637 cr/day | ~$0.92/day | **~10 prompts** |
 | Teams ($79/user/mo) | Varies | ~47% | Varies | **1–2 days** |
 
 After payback, every prompt saves you money. For the rest of your Manus subscription. Forever.
@@ -104,9 +106,9 @@ After payback, every prompt saves you money. For the rest of your Manus subscrip
 
 ## Installation
 
-### As Manus Skill (recommended — $12 bundle)
+### As Manus Skill (recommended — $9 individual / $12 bundle)
 
-1. Purchase from [Gumroad](https://rafaamaral.gumroad.com/l/manus-power-bundle) or [SkillFlow](https://skillflow.builders/skill/manus-power-bundle-mn7p4h88)
+1. Purchase from [Gumroad](https://rafaamaral.gumroad.com/l/credit-optimizer-v5) or [SkillFlow](https://skillflow.builders/skill/manus-power-bundle-mn7p4h88)
 2. Copy skill files to `~/skills/credit-optimizer/` and `~/skills/fast-navigation/`
 3. Both activate automatically on every task — no configuration needed
 
@@ -165,16 +167,29 @@ The Power Stack exists because these frustrations are real — and fixable.
 
 ---
 
+## Resources
+
+- **[Awesome Manus AI](https://github.com/rafsilva85/awesome-manus-ai)** — Curated list of Manus AI resources, tools, and tips
+- **[Pricing Guide 2026](https://creditopt.ai/pricing-guide)** — Complete Manus AI pricing breakdown
+- **[Standard vs Max Guide](https://creditopt.ai/standard-vs-max)** — When to use each mode
+- **[Tutorial](https://creditopt.ai/tutorial)** — Complete beginner's guide
+- **[Glossary](https://creditopt.ai/glossary)** — 30+ Manus AI terms explained
+- **[Roadmap](https://creditopt.ai/roadmap)** — What's coming next
+
+---
+
 ## Links
 
 | Channel | URL |
 |---------|-----|
 | **Landing Page** | [creditopt.ai](https://creditopt.ai) |
-| **Buy (Bundle $12)** | [Gumroad](https://rafaamaral.gumroad.com/l/manus-power-bundle) |
+| **Buy Individual ($9)** | [Gumroad](https://rafaamaral.gumroad.com/l/credit-optimizer-v5) |
+| **Buy Bundle ($12)** | [Gumroad](https://rafaamaral.gumroad.com/l/manus-power-bundle) |
 | **SkillFlow** | [skillflow.builders](https://skillflow.builders/skill/manus-power-bundle-mn7p4h88) |
 | **PyPI (Free MCP)** | [pypi.org](https://pypi.org/project/mcp-credit-optimizer/) |
 | **Smithery** | [smithery.ai](https://smithery.ai/server/@rafsilva85/mcp-credit-optimizer) |
 | **PulseMCP** | [pulsemcp.com](https://www.pulsemcp.com/servers?q=credit+optimizer) |
+| **Awesome List** | [github.com/rafsilva85/awesome-manus-ai](https://github.com/rafsilva85/awesome-manus-ai) |
 
 ---
 
