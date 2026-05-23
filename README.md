@@ -15,10 +15,10 @@
 
 ### 47% of your Manus credits are being wasted. This fixes it automatically.
 
-> **Zero downsides. 47% average savings. Pays for itself in ~27 prompts.**
+> **Zero downsides. 47% average savings. Pays for itself in ~36 prompts.**
 > Audited across 53 adversarial scenarios. Quality Veto Rule: if it can't save without loss, it doesn't touch your task.
 
-**Get it:** [Landing Page](https://creditopt.ai) · [Gumroad ($9)](https://rafaamaral.gumroad.com/l/credit-optimizer-v5) · [Power Bundle ($12)](https://rafaamaral.gumroad.com/l/manus-power-bundle) · [SkillFlow](https://skillflow.builders/skill/manus-power-bundle-mn7p4h88)
+**Get it:** [Landing Page](https://creditopt.ai) · [Gumroad ($12)](https://rafaamaral.gumroad.com/l/credit-optimizer-v5) · [Power Bundle ($12)](https://rafaamaral.gumroad.com/l/manus-power-bundle) · [SkillFlow](https://skillflow.builders/skill/manus-power-bundle-mn7p4h88)
 **Free MCP Server:** [PyPI](https://pypi.org/project/mcp-credit-optimizer/) · [Smithery](https://smithery.ai/server/@rafsilva85/mcp-credit-optimizer)
 
 ### As Seen On
@@ -88,7 +88,7 @@ Credit Optimizer decides **what** to optimize. Fast Navigation decides **how fas
 
 ---
 
-## The Math: Payback in ~27 Prompts
+## The Math: Payback in ~36 prompts
 
 The Power Stack costs $9 one-time (or $12 for the bundle with Fast Navigation). Here's how fast it pays for itself:
 
