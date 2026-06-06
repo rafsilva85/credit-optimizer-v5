@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/rafsilva85-credit-optimizer-v5-badge.png)](https://mseep.ai/app/rafsilva85-credit-optimizer-v5)
+
 <p align="center">
 
 [![PyPI Version](https://img.shields.io/pypi/v/manus-credit-optimizer?color=green&label=PyPI)](https://pypi.org/project/manus-credit-optimizer/)
